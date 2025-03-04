@@ -58,7 +58,7 @@ const Header = () => {
         </ul>
       </nav>
       <div className="header__search">
-        <input type="text" placeholder="Search for products, brands, or more..." size="60" />
+        <input className="search" type="text" placeholder="Search for products, brands, or more..." />
         <button className="search-btn">Search</button>
       </div>
       <div className="header__user">

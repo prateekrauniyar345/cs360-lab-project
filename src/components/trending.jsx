@@ -64,6 +64,7 @@ const TrendingSection = () => {
       <div className="trending-section__header">
         <h2>Highlights</h2>
       </div>
+      <br />
       <div className="trending-section__carousel">
         <button
           className="arrow left-arrow"
