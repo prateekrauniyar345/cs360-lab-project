@@ -1,0 +1,58 @@
+/* Apply box-sizing to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: white; /* Light gray background */
+  position: relative;
+}
+
+/* Ensure the root container takes full width and height */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Main content area should take available space */
+.main-content {
+  flex: 1;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utility class to hide overflowing content */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Utility class for centering content */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
