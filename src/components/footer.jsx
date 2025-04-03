@@ -4,6 +4,9 @@ import './footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
+    <div style={{ width: '100%', height: '1px', backgroundColor: 'black' }}></div>
+    <br />
+    <br />
       <div className="footer__content">
         {/* About Us Section */}
         <div className="footer__section about-us">

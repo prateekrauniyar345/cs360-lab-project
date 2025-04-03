@@ -8,9 +8,11 @@ const ByGender = () => {
   return (
     <div className="by-gender-container">
     <div className="line">
+    <br />
+      <br />
       <hr />
     </div>
-    <h2>Shop by Gender</h2>
+    <h2>New Arrival</h2>
     
       <div className="gender-section">
         <div className="image-container">

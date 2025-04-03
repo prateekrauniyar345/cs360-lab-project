@@ -1,66 +1,84 @@
-// import React from 'react';
-// import './header.css';
-// import logo from '../assets/logo/logo.jpg';
-
-
-
-// const Header = () => {
-//   return (
-//     <header className="header">
-//       <div className="header__logo">
-//         <a href='/'><img src={logo} alt="Company Logo" /></a>
-//       </div>
-//       <nav className="header__nav">
-//         <ul>
-//           <li><a href="/">Home</a></li>
-//           <li><a href="/products">Men</a></li>
-//           <li><a href="/products">Women</a></li>
-//           <li><a href="/products">Kids</a></li>
-//           <li><a href="/about">About Us</a></li>
-//           <li><a href="/contact">Contact</a></li>
-//         </ul>
-//       </nav>
-//       <div className="header__search">
-//         <input type="text" placeholder="Search..." size="40"/>
-//         <button>Search</button>
-//       </div>
-//       <div className="header__user">
-//         <a href="/login">Login</a>
-//         <a href="/cart">Cart</a>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-
-
-import React from 'react';
+import React, { useState } from 'react';
 import './header.css';
-import logo from '../assets/logo/logo.png'; // Your logo image
+import logo from '../assets/logo/logo.png';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
+  const [dropdown, setDropdown] = useState(null);
+
+  const toggleDropdown = (category) => {
+    setDropdown(dropdown === category ? null : category);
+  };
+
+  const renderDropdown = (gender, items) => (
+    <div className="dropdown-menu">
+      <div className="dropdown-grid">
+        <a href={`/products/${gender}/all`} className="shop-all">Shop All</a>
+        {items.map((item, idx) => (
+          <a key={idx} href={`/products/${gender}/${item.toLowerCase().replace(/ /g, '-')}`}>{item}</a>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <header className="header">
       <div className="header__logo">
-        <a href='/'><img src={logo} alt="Company Logo" className="logo" /></a>
+        <a href="/"><img src={logo} alt="Company Logo" className="logo" /></a>
       </div>
+
       <nav className="header__nav">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/products/men">Men</a></li>
-          <li><a href="/products/women">Women</a></li>
-          <li><a href="/products/kids">Kids</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contact</a></li>
+         <li><Link to="/">Home</Link></li>
+
+          {/* Men */}
+          <li className="dropdown-trigger" onClick={() => toggleDropdown("men")}>Men
+            {dropdown === "men" && renderDropdown("men", [
+              "Topwear", "Bottomwear", "Socks", "Watches", "Shoes", "Flip Flops", "Sandal", "Fragrance",
+              "Belts", "Innerwear", "Eyewear", "Wallets", "Jewellery", "Headwear", "Free Gifts", "Ties",
+              "Mufflers", "Loungewear and Nightwear", "Accessories", "Scarves", "Bags", "Gloves", "Cufflinks",
+              "Skin Care", "Perfumes", "Water Bottle", "Shoe Accessories", "Bath and Body", "Stoles"
+            ])}
+          </li>
+
+          {/* Women */}
+          <li className="dropdown-trigger" onClick={() => toggleDropdown("women")}>Women
+            {dropdown === "women" && renderDropdown("women", [
+              "Watches", "Topwear", "Belts", "Bags", "Innerwear", "Jewellery", "Lips", "Shoes", "Saree",
+              "Fragrance", "Sandal", "Nails", "Scarves", "Dress", "Loungewear and Nightwear", "Bottomwear",
+              "Wallets", "Flip Flops", "Apparel Set", "Mufflers", "Skin Care", "Makeup", "Socks", "Eyewear",
+              "Accessories", "Skin", "Headwear", "Beauty Accessories", "Free Gifts", "Eyes", "Bath and Body",
+              "Cufflinks", "Stoles", "Hair", "Perfumes", "Umbrellas", "Vouchers"
+            ])}
+          </li>
+
+          {/* Boys */}
+          <li className="dropdown-trigger" onClick={() => toggleDropdown("boys")}>Boys
+            {dropdown === "boys" && renderDropdown("boys", [
+              "Flip Flops", "Topwear", "Shoes", "Bottomwear", "Socks", "Sandal", "Eyewear", "Apparel Set",
+              "Watches", "Gloves", "Headwear", "Innerwear"
+            ])}
+          </li>
+
+          {/* Girls */}
+          <li className="dropdown-trigger" onClick={() => toggleDropdown("girls")}>Girls
+            {dropdown === "girls" && renderDropdown("girls", [
+              "Topwear", "Bottomwear", "Dress", "Sandal", "Watches", "Shoes", "Flip Flops", "Innerwear",
+              "Gloves", "Socks", "Headwear", "Apparel Set", "Eyewear", "Jewellery", "Bags"
+            ])}
+          </li>
+
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
+
       <div className="header__search">
         <input className="search" type="text" placeholder="Search for products, brands, or more..." />
         <button className="search-btn">Search</button>
       </div>
+
       <div className="header__user">
         <a href="/login" className="login-btn">Login</a>
         <a href="/cart" className="cart-btn">

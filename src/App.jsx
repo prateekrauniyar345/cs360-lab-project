@@ -1,25 +1,37 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
-import Leaderboard from "./components/leaderboard";
+import Leaderboard from './components/leaderboard';
 import TrendingSection from './components/trending';
 import ShopByCategory from './components/shopByCategory';
 import ByGender from './components/shopbygender';
-import './App.css'
+import About from './components/about';
+import Contact from './components/contacts'; // make sure you have this
+import './App.css';
 
-function App() {
-
+function Home() {
   return (
-    // fragments
     <>
-      <Header/>
       <Leaderboard />
       <TrendingSection />
-      <ShopByCategory/>
-      <ByGender/>
-      <Footer/>
+      <ShopByCategory />
+      <ByGender />
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
+}
+
+export default App;
