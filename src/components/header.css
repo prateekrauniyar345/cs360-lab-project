@@ -45,9 +45,11 @@
   transition: color 0.3s ease;
 }
 
-.header__nav ul li a:hover {
-  color: #ff9900; 
+.header__nav ul li:hover {
+  color: #ff9900;
+  cursor: pointer;
 }
+
 
 
 .dropdown-menu {
@@ -133,6 +135,7 @@
 .header__user {
   display: flex;
   align-items: center;
+  gap : 35px;
 }
 
 .header__user a {
