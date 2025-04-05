@@ -1,0 +1,77 @@
+/* Main Layout */
+.product-listing {
+   display: flex;
+   gap: 2rem;
+   padding: 2rem;
+   color: black;
+   background-color: #f8f8f8;
+   position: relative;
+ }
+ 
+ /* Sidebar Filters */
+ .filters {
+   width: 250px;
+   background-color: #fff;
+   padding: 1.5rem;
+   border-radius: 8px;
+   box-shadow: 0 0 8px rgba(0,0,0,0.05);
+ }
+ 
+ .filters h3 {
+   font-size: 1.2rem;
+   margin-bottom: 1rem;
+ }
+ 
+ .filter-group {
+   margin-bottom: 1.5rem;
+ }
+ 
+ .filter-group h4 {
+   font-size: 1rem;
+   margin-bottom: 0.5rem;
+ }
+ 
+ .filter-group label {
+   display: flex;
+   align-items: center;
+   font-size: 0.95rem;
+   margin-bottom: 0.25rem;
+   cursor: pointer;
+ }
+ 
+ .filter-group input[type="checkbox"] {
+   margin-right: 0.5rem;
+ }
+ 
+ /* Price Range Style */
+ input[type="range"] {
+   width: 100%;
+   margin-top: 0.5rem;
+ }
+ 
+ /* Products Section */
+ .products {
+   flex: 1;
+ }
+ 
+ .products h2 {
+   font-size: 1.5rem;
+   margin-bottom: 1rem;
+ }
+ 
+ /* Product Grid */
+ .product-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+   gap: 1.5rem;
+ }
+ 
+ .product-card {
+   background-color: #fff;
+   padding: 1rem;
+   border-radius: 8px;
+   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+   text-align: center;
+   font-size: 1rem;
+ }
+ 
