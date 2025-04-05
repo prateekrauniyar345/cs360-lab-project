@@ -6,7 +6,7 @@
    margin-top: 0; /* No need for additional margin */
    z-index: 1; /* Keeps it below the header */
    overflow: hidden;
-   margin-top: 2300px;
+   margin-top: 160rem;
  }
  
  .slide {
