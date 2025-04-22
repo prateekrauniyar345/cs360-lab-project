@@ -1,0 +1,27 @@
+my-react-app/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/              # Images, icons, fonts, etc.
+│   │   └── logo.png
+│   ├── components/          # Reusable UI components (Header, Footer, Buttons, etc.)
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   └── ...
+│   ├── pages/               # Page-level components
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Products.jsx
+│   │   ├── Contact.jsx
+│   │   └── ...
+│   ├── routes/              # (Optional) Route definitions for centralized routing
+│   │   └── AppRoutes.jsx
+│   ├── App.jsx              # Main component with router setup
+│   ├── main.jsx             # Entry point (ReactDOM.createRoot)
+│   ├── index.css            # Global styles
+│   └── config/              # (Optional) Configuration or constants
+│       └── routes.js
+├── .gitignore
+├── package.json
+├── vite.config.js           # Or webpack.config.js if using Webpack
+└── README.md
